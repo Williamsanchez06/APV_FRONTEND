@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Perfil</title>
+</head>
+<body>
+
+    <header class="py-10 bg-indigo-600">
+        <div
+          class="container mx-auto flex flex-col lg:flex-row justify-between items-center"
+        >
+        
+          <h2 class="font-bold text-2xl text-indigo-200 ml-4 text-center">
+            Administrador de Pacientes de
+            <span class="text-white font-black"> Veterinaria</span>
+          </h2>
+  
+          <nav 
+          class="flex flex-col lg:flex-row items-center p-4 mr-4 mt-5 lg:mt-0">
+            <a href="#" class="text-white text-sm uppercase font-bold"
+              >Pacientes</a
+            >
+            <a href="EditarPerfil.html" class="text-white text-sm uppercase font-bold"
+              >Perfil</a
+            >
+  
+            <button
+              id="cerrarSesion"
+              type="button"
+              class="text-white text-sm uppercase font-bold"
+            >
+              Cerrar Sesion
+            </button>
+          </nav>
+        </div>
+      </header>
+
+    <nav class="flex gap-3">
+        <a href="EditarPerfil.html" class="font-bold uppercase text-gray-500">Perfil</a>
+        <a href="CambiarPassword.html" class="font-bold uppercase text-gray-500">Cambiar Password</a>
+    </nav>
+
+    <h2 class="font-black text-3xl text-center mt-10">Editar Perfil</h2>
+    <p class="text-xl mt-5 mb-10 text-center">Modifica tu <span class="text-indigo-600 font-bold">Informacion Aqui</span></p>
+
+    <div class="flex justify-center" >
+      <div class="w-full md:w-1/2 bg-white shadow rounded-lg p-5">
+        <form id="formularioEditar" class="divFormulario">
+            
+          <div class="my-3">
+              <label for="" class="uppercase font-bold text-gray-600">Nombre</label>
+              <input 
+              type="text"
+              class="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+              name="nombre"              
+              >
+          </div>
+          
+          <div class="my-3">
+            <label for="" class="uppercase font-bold text-gray-600">Sitio Web</label>
+            <input 
+            type="text"
+            class="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+            name="web"              
+            >
+          </div>
+
+        <div class="my-3">
+          <label for="" class="uppercase font-bold text-gray-600">Telefono</label>
+          <input 
+          type="text"
+          class="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+          name="telefono"              
+          >
+        </div>
+
+        <div class="my-3">
+          <label for="" class="uppercase font-bold text-gray-600">Email</label>
+          <input 
+          type="text"
+          class="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
+          name="email"              
+          >
+      </div>
+
+      <input
+      type="submit"
+      value="Guardar Cambios"
+      class="bg-indigo-700 px-10 py-3 font-bold text-white rounded-lg uppercase w-full mt-5 cursor-pointer"
+      >
+
+
+        </form>
+      </div>
+    </div>
+
+    <footer class="py-10">
+      <p class="text-center font-bold">
+        APV - Administrador de Pacientes de
+        <span class="text-indigo-600"> Veterinaria</span>
+      </p>
+    </footer>
+
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/EditarPerfil.js" type="module"></script>
+</html>

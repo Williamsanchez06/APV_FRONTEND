@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador de Pacientes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <script>
+    const valores = window.location.search;
+    const urlParams = new URLSearchParams(valores);
+    const token = urlParams.get("id");
+
+    const validado = localStorage.getItem("validado");
+
+    if (validado == "false" || token == null) {
+      window.location = "index.html";
+    }
+  </script>
+
+  <body>
+    <header class="py-10 bg-indigo-600">
+      <div
+        class="container mx-auto flex flex-col lg:flex-row justify-between items-center"
+      >
+      
+
+        <h2 class="font-bold text-2xl text-indigo-200 ml-4 text-center">
+          Administrador de Pacientes de
+          <span class="text-white font-black"> Veterinaria</span>
+        </h2>
+
+        <nav
+          class="flex flex-col lg:flex-row items-center gap-4 mr-4 mt-5 lg:mt-0"
+        >
+          <a href="admin.html" class="text-white text-sm uppercase font-bold"
+            >Pacientes</a
+          >
+          <a href="EditarPerfil.html" class="text-white text-sm uppercase font-bold"
+            >Perfil</a
+          >
+
+          <button
+            id="cerrarSesion"
+            type="button"
+            class="text-white text-sm uppercase font-bold"
+          >
+            Cerrar Sesion
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto mt-10 md:ml-6">
+      <div class="flex flex-col md:flex-row">
+        <button
+          id="button"
+          type="button"
+          class="bg-indigo-600 text-white font-bold uppercase mx-10 p-3 rounded-md mb-10 md:hidden"
+        >
+          Ocultar Formulario
+        </button>
+
+        <div>
+
+          <h1  class="font-black text-3xl text-center mb-5">Administrador de Pacientes</h1>
+          <p class="text-lg text-center mb-10">
+            Añade tus Pacientes y
+            <span class="text-indigo-600 font-bold">Administralos</span>
+          </p>
+
+          <form
+            id="formulario"
+            class="divFormulario bg-white py-10 px-5 mb-10 lg:mb-5 shadow-md rounded-md"
+          >
+            <div class="mb-5">
+              <label for="mascota" class="text-gray-700 uppercase font-bold"
+                >Nombre Mascota</label
+              >
+              <input
+                id="mascota"
+                type="text"
+                placeholder="Nombre de la Mascota"
+                class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label for="propietario" class="text-gray-700 uppercase font-bold"
+                >Nombre Propietario</label
+              >
+              <input
+                id="propietario"
+                type="text"
+                placeholder="Nombre del Propietario"
+                class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label for="email" class="text-gray-700 uppercase font-bold"
+                >Email Mascota</label
+              >
+              <input
+                id="email"
+                type="email"
+                placeholder="Email del Propietario"
+                class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label for="fecha" class="text-gray-700 uppercase font-bold"
+                >Fecha de Alta</label
+              >
+              <input
+                id="fecha"
+                type="date"
+                class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+              />
+            </div>
+
+            <div class="mb-5">
+              <label for="sintomas" class="text-gray-700 uppercase font-bold"
+                >Sintomas</label
+              >
+              <textarea
+                id="sintomas"
+                placeholder="Describe los Sintomas"
+                class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+              ></textarea>
+            </div>
+
+            <div
+              id="alerta"
+              class="from-red-400 to-red-600 from-indigo-400 to-indigo-600 bg-gradient-to-r text-center p-3 rounded-xl uppercase text-white text-sm mb-10 hidden"
+            ></div>
+
+            <div
+              id="alerta2"
+              class="from-red-400 to-red-600 from-indigo- bg-gradient-to-r text-center p-3 rounded-xl uppercase text-white text-sm mb-10 hidden"
+            ></div>
+
+            <input
+              id="agregarPacientebtn"
+              type="submit"
+              class="bg-indigo-600 w-full text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors p-3"
+              value="Agregar Paciente"
+            />
+          </form>
+        </div>
+
+        <div id="pacientes" class="md:w-1/2 lg:w-3/5">
+
+          </h2>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-10">
+      <p class="text-center font-bold">
+        APV - Administrador de Pacientes de
+        <span class="text-indigo-600"> Veterinaria</span>
+      </p>
+    </footer>
+  </body>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/AdministradorPacientes.js" type="module"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>
